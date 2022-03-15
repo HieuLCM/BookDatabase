@@ -4,12 +4,14 @@ const schema = require('./schema/schema')
 const mongoose = require('mongoose')
 const cors = require('cors')
 
+require('dotenv').config()
+
 const app = express()
 
 // allow origin-across request
 app.use(cors())
 
-mongoose.connect('mongodb+srv://hieulcm:Minhhieu1@cluster0.8fdzj.mongodb.net/Cluster0?retryWrites=true&w=majority')
+mongoose.connect(`mongodb+srv://${process.env.USER}:${process.env.PASSWORD}@cluster0.8fdzj.mongodb.net/${process.env.CLUSTER_NAME}?retryWrites=true&w=majority`)
 mongoose.connection.once('open', () => {
     console.log('Connected to database')
 })
