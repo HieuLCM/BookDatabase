@@ -4,4 +4,4 @@
 
 ## Port of back-end: 5000
 
-### Look the server branch to know more about server setup
+### Look over the server branch to know more about server setup
